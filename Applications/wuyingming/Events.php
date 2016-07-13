@@ -47,13 +47,8 @@ class Events
     if($cmd == 'flow-getDeviceList'){
       //获取设备列表
       $info = $db->select('*')->from('device_list')->where("userId= '".$data['userId']."' ")->query();
-      if($info){
-        var_dump($info);
-        //绑定uid
-        Gateway::bindUid($client_id, $data['userId']);
-        //把数据返回给当前客户端
-        Gateway::sendToAll(json_encode($info));
-      }
+      $test = Gateway::isOnline($client_id);
+      var_dump($test);
      
 
     }
