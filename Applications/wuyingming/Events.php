@@ -52,7 +52,7 @@ class Events
         //绑定uid
         Gateway::bindUid($client_id, $data['userId']);
         //把数据返回给当前客户端
-        Gateway::sendToCurrentClient(json_encode($info));
+        Gateway::sendToAll(json_encode($info));
       }
      
 
