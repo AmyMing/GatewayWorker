@@ -35,14 +35,24 @@ class Events
     * @param int $client_id 连接id
     * @param mixed $message 具体消息
     */
-   public static function onMessage($client_id, $message) {
+    
+    public static function onMessage($client_id,$message){
+      var_dump($message);
+      $msg = json_decode($message,true);
+
+      var_dump($msg);
+    }
+
+
+
+
+   /*public static function onMessage($client_id, $message) {
     //把数据存起来  
     //file_put_contents('./device_list.txt', $message."\r\n",FILE_APPEND);
     //存到数据库中
     $db =  Db::instance('db');
     $data = json_decode($message,true);
 
-    var_dump($data);
 
     $cmd = $data['cmd'];
 
