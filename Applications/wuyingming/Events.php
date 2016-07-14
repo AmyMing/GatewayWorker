@@ -49,6 +49,7 @@ class Events
       $info = $db->select('*')->from('device_list')->where("userId= '".$data['userId']."' ")->query();
       $test = Gateway::isOnline($client_id);
       var_dump($test);
+      var_dump($_SERVER);
      
 
     }
