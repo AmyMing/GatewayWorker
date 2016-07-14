@@ -42,6 +42,8 @@ class Events
     $db =  Db::instance('db');
     $data = json_decode($message,true);
 
+    var_dump($data);
+
     $cmd = $data['cmd'];
 
     if($cmd == 'flow-getDeviceList'){
@@ -51,7 +53,7 @@ class Events
       var_dump($test);
       var_dump($_SERVER);
     }
-    elseif ($cmd = 'heartbeat') {
+    elseif ($cmd == 'heartbeat') {
       var_dump($data);
     }
     //先去查询是否绑定过
