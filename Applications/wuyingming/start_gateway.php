@@ -22,7 +22,7 @@ require_once __DIR__ . '/../../Workerman/Autoloader.php';
 Autoloader::setRootPath(__DIR__);
 
 // gateway 进程，这里使用Text协议，可以用telnet测试
-$gateway = new Gateway("udp://0.0.0.0:8282");
+$gateway = new Gateway("tcp://0.0.0.0:8282");
 // gateway名称，status方便查看
 $gateway->name = 'wuyingmingHardware';
 // gateway进程数
