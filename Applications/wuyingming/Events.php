@@ -50,8 +50,9 @@ class Events
       $test = Gateway::isOnline($client_id);
       var_dump($test);
       var_dump($_SERVER);
-     
-
+    }
+    elseif ($cmd = 'heartbeat') {
+      var_dump($data);
     }
     //先去查询是否绑定过
     //$info = $db->select('*')->from('device_list')->where("sid= '".$data['sid']."' ")->row();
